@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "clinic-fe"
+  "defaultProject": "clinic-fe",
+  "cli": {
+    "analytics": false
+  }
 }
