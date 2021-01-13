@@ -1,3 +1,4 @@
+import { MatetialModule } from './material.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -6,15 +7,16 @@ import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LandingComponent } from './components/landing/landing.component';
-import { LogInComponent } from './components/log-in/log-in.component';
+import { LoginComponent } from './components/login/login.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { UnauthorizedPageComponent } from './components/unauthorized-page/unauthorized-page.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingComponent,
-    LogInComponent,
+    LoginComponent,
     PageNotFoundComponent,
     UnauthorizedPageComponent
   ],
@@ -22,7 +24,9 @@ import { UnauthorizedPageComponent } from './components/unauthorized-page/unauth
     BrowserModule,
     AppRoutingModule,
     StoreModule.forRoot({}, {}),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatetialModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

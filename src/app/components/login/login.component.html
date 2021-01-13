@@ -1,0 +1,21 @@
+<mat-card class="login">
+    <mat-card-title>Super Clinic</mat-card-title>
+    <mat-card-content>
+        <form [formGroup]="loginForm" (ngSubmit)="submit()" class="login__form">
+                <mat-form-field>
+                    <mat-label>Enter your username</mat-label>
+                    <input type="text" matInput placeholder="Username" [formControlName]="'username'">
+                    <mat-error>Username is required</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Enter your password</mat-label>
+                    <input type="password" matInput placeholder="Password" [formControlName]="'password'">
+                    <mat-error>Password is required</mat-error>
+                </mat-form-field>
+
+            <button mat-raised-button color="primary" type="submit" class="login__submit">Login</button>
+            
+            <mat-error *ngIf="true">Invalid username or password</mat-error>
+        </form>
+    </mat-card-content>
+</mat-card>
