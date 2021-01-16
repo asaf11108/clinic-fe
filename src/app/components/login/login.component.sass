@@ -1,14 +1,16 @@
 .login
 
     
-    .mat-form-field
-        width: 100%
+    &__form-field-wrapper
         margin: 1rem 0
-
-    mat-card-title,
-    mat-card-content 
+        .mat-form-field
+            width: 360px
+        
+    &__card-title.mat-card-title,
+    &__card-content.mat-card-content
         display: flex
         justify-content: center
 
-    &__submit
-        align-self: flex-end
+    &__submit-wrapper
+        display: flex
+        justify-content: flex-end

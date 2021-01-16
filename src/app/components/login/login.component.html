@@ -1,19 +1,24 @@
 <mat-card class="login">
-    <mat-card-title>Super Clinic</mat-card-title>
-    <mat-card-content>
+    <mat-card-title class="login__card-title">Super Clinic</mat-card-title>
+    <mat-card-content class="login__card-content">
         <form [formGroup]="loginForm" (ngSubmit)="submit()" class="login__form">
+            <div class="login__form-field-wrapper">
                 <mat-form-field>
                     <mat-label>Enter your username</mat-label>
                     <input type="text" matInput placeholder="Username" [formControlName]="'username'">
                     <mat-error>Username is required</mat-error>
                 </mat-form-field>
+            </div>
+            <div class="login__form-field-wrapper">
                 <mat-form-field>
                     <mat-label>Enter your password</mat-label>
                     <input type="password" matInput placeholder="Password" [formControlName]="'password'">
                     <mat-error>Password is required</mat-error>
                 </mat-form-field>
-
-            <button mat-raised-button color="primary" type="submit" class="login__submit">Login</button>
+            </div>
+            <div class="login__submit-wrapper">
+                <button mat-raised-button color="primary" type="submit">Login</button>
+            </div>
             
             <mat-error *ngIf="true">Invalid username or password</mat-error>
         </form>
