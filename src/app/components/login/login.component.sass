@@ -1,11 +1,15 @@
-.login
+@use 'colors'
+@use 'vendors'
 
+.login
     
     &__form-field-wrapper
         margin: 1rem 0
         .mat-form-field
             width: 360px
-        
+            @include vendors.media('<=sm')
+                width: 90vw
+            
     &__card-title.mat-card-title,
     &__card-content.mat-card-content
         display: flex

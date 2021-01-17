@@ -1,6 +1,6 @@
 @use '../1-utilities/colors'
+@use '../7-vendors/vendors'
 
-$breakpoints: ('main': 60em, 'xs': 22.5em, 'sm': 30em, 'md': 60em, 'lg': 75em, 'xl': 80em)
-
-body
-    background-color: colors.$body-bg
+@include vendors.media('>sm')
+    body
+        background-color: colors.$body-bg

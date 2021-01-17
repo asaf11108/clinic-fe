@@ -31,10 +31,20 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles/main.sass"
             ],
-            "scripts": []
+            "scripts": [],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/styles/1-utilities",
+                "src/styles/2-basics",
+                "src/styles/3-components",
+                "src/styles/4-layout",
+                "src/styles/5-pages",
+                "src/styles/6-themes",
+                "src/styles/7-vendors"
+              ]
+            }
           },
           "configurations": {
             "production": {
@@ -95,10 +105,20 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles/main.sass"
             ],
-            "scripts": []
+            "scripts": [],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/styles/1-utilities",
+                "src/styles/2-basics",
+                "src/styles/3-components",
+                "src/styles/4-layout",
+                "src/styles/5-pages",
+                "src/styles/6-themes",
+                "src/styles/7-vendors"
+              ]
+            }
           }
         },
         "lint": {
