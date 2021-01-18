@@ -12,6 +12,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { UnauthorizedPageComponent } from './components/unauthorized-page/unauthorized-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { EffectsModule } from '@ngrx/effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { EffectsModule } from '@ngrx/effects';
     MatetialModule,
     ReactiveFormsModule,
     StoreModule.forRoot({}, {}),
-    EffectsModule.forRoot([])
+    EffectsModule.forRoot([]),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
