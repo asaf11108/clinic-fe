@@ -151,7 +151,8 @@
   },
   "defaultProject": "clinic-fe",
   "cli": {
-    "analytics": false
+    "analytics": false,
+    "defaultCollection": "@ngrx/schematics"
   },
   "schematics": {
     "@schematics/angular": {
