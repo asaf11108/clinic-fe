@@ -1,0 +1,2 @@
+[0119/085049.065:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[0119/085049.081:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Asaf Regev\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\18bbd1f9-4184-4153-afa0-184762dfb39d: The system cannot find the path specified. (0x3)
