@@ -14,6 +14,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import * as fromLogin from './components/login/login.reducer';
+import { LoginEffects } from './components/login/login.effects';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { environment } from '../environments/environment';
     ReactiveFormsModule,
     StoreModule.forRoot({}, {}),
     EffectsModule.forRoot([]),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    StoreModule.forFeature(fromLogin.loginFeatureKey, fromLogin.reducer),
+    EffectsModule.forFeature([LoginEffects])
   ],
   providers: [],
   bootstrap: [AppComponent]
