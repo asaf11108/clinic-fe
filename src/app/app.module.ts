@@ -16,6 +16,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import * as fromLogin from './components/login/login.reducer';
 import { LoginEffects } from './components/login/login.effects';
+import { AmplifyAuthService } from './services/amplify-auth.service';
 
 const rootReducers = {
   login: fromLogin.reducer
