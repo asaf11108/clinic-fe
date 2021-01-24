@@ -17,6 +17,7 @@ import { environment } from '../environments/environment';
 import * as fromLogin from './components/login/login.reducer';
 import { LoginEffects } from './components/login/login.effects';
 import { AmplifyAuthService } from './services/amplify-auth.service';
+import { ReactiveComponentModule } from '@ngrx/component';
 
 const rootReducers = {
   login: fromLogin.reducer
@@ -43,6 +44,7 @@ const rootEffects = [
     StoreModule.forRoot(rootReducers, {}),
     EffectsModule.forRoot(rootEffects),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    ReactiveComponentModule
   ],
   providers: [],
   bootstrap: [AppComponent]

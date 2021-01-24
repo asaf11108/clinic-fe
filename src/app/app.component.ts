@@ -17,7 +17,6 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     setTimeout(() => {
       // this.signUp();
-      // this.signIn();
       // this.apiService.ListTodos().then(console.dir)
     }, 5000);
   }
@@ -37,17 +36,6 @@ export class AppComponent implements OnInit {
       console.log(user)
     }).catch(error => {
       console.log('error signing up:', error);
-    })
-  }
-
-  signIn() {
-    Auth.signIn({
-      username: 'irisreg7',
-      password: '62626262',
-    }).then(res => {
-      console.dir(res)
-    }).catch(error => {
-      console.log('error signing in:', error);
     })
   }
 

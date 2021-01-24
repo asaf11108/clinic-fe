@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { catchError, map, concatMap } from 'rxjs/operators';
-import { EMPTY, of } from 'rxjs';
+import { catchError, map, switchMap } from 'rxjs/operators';
+import { from, of } from 'rxjs';
 
 import * as LoginActions from './login.actions';
+import { Auth } from 'aws-amplify';
 
 
 
@@ -12,18 +13,14 @@ export class LoginEffects {
 
   login$ = createEffect(() => {
     return this.actions$.pipe( 
-
       ofType(LoginActions.login),
-      concatMap(() =>
-        /** An EMPTY observable only emits completion. Replace with your own observable API request */
-        EMPTY.pipe(
+      switchMap(action =>
+        from(Auth.signIn({ username: action.username, password: action.password})).pipe(
           map(data => LoginActions.loginSuccess({ data })),
           catchError(error => of(LoginActions.loginFailure({ error }))))
       )
     );
   });
-
-
 
   constructor(private actions$: Actions) {}
 
