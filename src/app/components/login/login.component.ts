@@ -1,6 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { login } from './login.actions';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private store: Store) { }
 
   loginForm: FormGroup = new FormGroup({
     username: new FormControl('', Validators.required),
@@ -22,7 +23,6 @@ export class LoginComponent implements OnInit {
   }
 
   submit() {
-    if (this.loginForm.valid) {
-    }
+    this.store.dispatch(login(this.loginForm.value));
   }
 }

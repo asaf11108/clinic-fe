@@ -1,7 +1,9 @@
+import { LoginForm } from './../../model/login';
 import { createAction, props } from '@ngrx/store';
 
 export const login = createAction(
-  '[Login] Load Login'
+  '[Login] Load Login',
+  props<LoginForm>()
 );
 
 export const loginSuccess = createAction(
