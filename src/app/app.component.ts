@@ -12,13 +12,13 @@ export class AppComponent implements OnInit {
   title = 'clinic-fe';
 
   constructor(private amplifyAuthService: AmplifyAuthService, private apiService: APIService) {
-    apiService.ListTodos().then(console.dir)
   }
-
+  
   ngOnInit(): void {
     setTimeout(() => {
       // this.signUp();
-      this.signIn();
+      // this.signIn();
+      // this.apiService.ListTodos().then(console.dir)
     }, 5000);
   }
 
