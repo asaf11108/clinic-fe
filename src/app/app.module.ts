@@ -1,3 +1,4 @@
+import { MatButtonLoadingDirective } from './../directives/mat-button-loading.directive';
 import { MatetialModule } from './material.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -33,7 +34,8 @@ const rootEffects = [
     LandingComponent,
     LoginComponent,
     PageNotFoundComponent,
-    UnauthorizedPageComponent
+    UnauthorizedPageComponent,
+    MatButtonLoadingDirective
   ],
   imports: [
     BrowserModule,

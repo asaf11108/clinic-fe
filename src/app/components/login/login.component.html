@@ -17,7 +17,7 @@
                 </mat-form-field>
             </div>
             <div class="login__submit-wrapper">
-                <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid">Login</button>
+                <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid" [loading]="isLoging$ | ngrxPush">Login</button>
             </div>
             
             <mat-error *ngIf="hasError$ | ngrxPush">Invalid username or password</mat-error>
