@@ -5,14 +5,23 @@ type Patient @model {
   phone: String
   cellphone: String
   address: String
-  email: String
+  email: AWSEmail
   fax: String
-  age: String
-  birthDay: String
+  birthDay: AWSDateTime
   familyStatus: String
   children: String
-  height: String
-  weight: String
+  height: Int
+  weight: Float
   momOrg: String
   dadOrg: String
+  meetings: [Meeting] @connection(keyName: "byPatient", fields: ["id"])
+}
+
+type Meeting @model @key(name: "byPatient", fields: ["patientId", "date"]) {
+  id: ID!
+  patientId: ID!
+  date: AWSDateTime!
+  description: String
+  weight: Float
+  patient: Patient @connection(fields: ["patientId"])
 }

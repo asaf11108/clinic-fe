@@ -12,7 +12,6 @@ mutation CreatePatient(
     address
     email
     fax
-    age
     birthDay
     familyStatus
     children
@@ -20,6 +19,18 @@ mutation CreatePatient(
     weight
     momOrg
     dadOrg
+    meetings {
+      items {
+        id
+        patientId
+        date
+        description
+        weight
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
     createdAt
     updatedAt
   }
@@ -37,7 +48,6 @@ mutation UpdatePatient(
     address
     email
     fax
-    age
     birthDay
     familyStatus
     children
@@ -45,6 +55,18 @@ mutation UpdatePatient(
     weight
     momOrg
     dadOrg
+    meetings {
+      items {
+        id
+        patientId
+        date
+        description
+        weight
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
     createdAt
     updatedAt
   }
@@ -62,7 +84,6 @@ mutation DeletePatient(
     address
     email
     fax
-    age
     birthDay
     familyStatus
     children
@@ -70,6 +91,126 @@ mutation DeletePatient(
     weight
     momOrg
     dadOrg
+    meetings {
+      items {
+        id
+        patientId
+        date
+        description
+        weight
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateMeeting(
+  $input: CreateMeetingInput!
+  $condition: ModelMeetingConditionInput
+) {
+  createMeeting(input: $input, condition: $condition) {
+    id
+    patientId
+    date
+    description
+    weight
+    patient {
+      id
+      firstName
+      lastName
+      phone
+      cellphone
+      address
+      email
+      fax
+      birthDay
+      familyStatus
+      children
+      height
+      weight
+      momOrg
+      dadOrg
+      meetings {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateMeeting(
+  $input: UpdateMeetingInput!
+  $condition: ModelMeetingConditionInput
+) {
+  updateMeeting(input: $input, condition: $condition) {
+    id
+    patientId
+    date
+    description
+    weight
+    patient {
+      id
+      firstName
+      lastName
+      phone
+      cellphone
+      address
+      email
+      fax
+      birthDay
+      familyStatus
+      children
+      height
+      weight
+      momOrg
+      dadOrg
+      meetings {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteMeeting(
+  $input: DeleteMeetingInput!
+  $condition: ModelMeetingConditionInput
+) {
+  deleteMeeting(input: $input, condition: $condition) {
+    id
+    patientId
+    date
+    description
+    weight
+    patient {
+      id
+      firstName
+      lastName
+      phone
+      cellphone
+      address
+      email
+      fax
+      birthDay
+      familyStatus
+      children
+      height
+      weight
+      momOrg
+      dadOrg
+      meetings {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
     createdAt
     updatedAt
   }

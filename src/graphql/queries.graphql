@@ -9,7 +9,6 @@ query GetPatient($id: ID!) {
     address
     email
     fax
-    age
     birthDay
     familyStatus
     children
@@ -17,6 +16,18 @@ query GetPatient($id: ID!) {
     weight
     momOrg
     dadOrg
+    meetings {
+      items {
+        id
+        patientId
+        date
+        description
+        weight
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
     createdAt
     updatedAt
   }
@@ -36,7 +47,6 @@ query ListPatients(
       address
       email
       fax
-      age
       birthDay
       familyStatus
       children
@@ -44,6 +54,79 @@ query ListPatients(
       weight
       momOrg
       dadOrg
+      meetings {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetMeeting($id: ID!) {
+  getMeeting(id: $id) {
+    id
+    patientId
+    date
+    description
+    weight
+    patient {
+      id
+      firstName
+      lastName
+      phone
+      cellphone
+      address
+      email
+      fax
+      birthDay
+      familyStatus
+      children
+      height
+      weight
+      momOrg
+      dadOrg
+      meetings {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
+query ListMeetings(
+  $filter: ModelMeetingFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listMeetings(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      patientId
+      date
+      description
+      weight
+      patient {
+        id
+        firstName
+        lastName
+        phone
+        cellphone
+        address
+        email
+        fax
+        birthDay
+        familyStatus
+        children
+        height
+        weight
+        momOrg
+        dadOrg
+        createdAt
+        updatedAt
+      }
       createdAt
       updatedAt
     }

@@ -9,7 +9,6 @@ subscription OnCreatePatient {
     address
     email
     fax
-    age
     birthDay
     familyStatus
     children
@@ -17,6 +16,18 @@ subscription OnCreatePatient {
     weight
     momOrg
     dadOrg
+    meetings {
+      items {
+        id
+        patientId
+        date
+        description
+        weight
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
     createdAt
     updatedAt
   }
@@ -31,7 +42,6 @@ subscription OnUpdatePatient {
     address
     email
     fax
-    age
     birthDay
     familyStatus
     children
@@ -39,6 +49,18 @@ subscription OnUpdatePatient {
     weight
     momOrg
     dadOrg
+    meetings {
+      items {
+        id
+        patientId
+        date
+        description
+        weight
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
     createdAt
     updatedAt
   }
@@ -53,7 +75,6 @@ subscription OnDeletePatient {
     address
     email
     fax
-    age
     birthDay
     familyStatus
     children
@@ -61,6 +82,117 @@ subscription OnDeletePatient {
     weight
     momOrg
     dadOrg
+    meetings {
+      items {
+        id
+        patientId
+        date
+        description
+        weight
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateMeeting {
+  onCreateMeeting {
+    id
+    patientId
+    date
+    description
+    weight
+    patient {
+      id
+      firstName
+      lastName
+      phone
+      cellphone
+      address
+      email
+      fax
+      birthDay
+      familyStatus
+      children
+      height
+      weight
+      momOrg
+      dadOrg
+      meetings {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateMeeting {
+  onUpdateMeeting {
+    id
+    patientId
+    date
+    description
+    weight
+    patient {
+      id
+      firstName
+      lastName
+      phone
+      cellphone
+      address
+      email
+      fax
+      birthDay
+      familyStatus
+      children
+      height
+      weight
+      momOrg
+      dadOrg
+      meetings {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteMeeting {
+  onDeleteMeeting {
+    id
+    patientId
+    date
+    description
+    weight
+    patient {
+      id
+      firstName
+      lastName
+      phone
+      cellphone
+      address
+      email
+      fax
+      birthDay
+      familyStatus
+      children
+      height
+      weight
+      momOrg
+      dadOrg
+      meetings {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
     createdAt
     updatedAt
   }
