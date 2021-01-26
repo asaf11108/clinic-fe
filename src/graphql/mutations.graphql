@@ -7,6 +7,19 @@ mutation CreatePatient(
     id
     firstName
     lastName
+    phone
+    cellphone
+    address
+    email
+    fax
+    age
+    birthDay
+    familyStatus
+    children
+    height
+    weight
+    momOrg
+    dadOrg
     createdAt
     updatedAt
   }
@@ -19,6 +32,19 @@ mutation UpdatePatient(
     id
     firstName
     lastName
+    phone
+    cellphone
+    address
+    email
+    fax
+    age
+    birthDay
+    familyStatus
+    children
+    height
+    weight
+    momOrg
+    dadOrg
     createdAt
     updatedAt
   }
@@ -31,6 +57,19 @@ mutation DeletePatient(
     id
     firstName
     lastName
+    phone
+    cellphone
+    address
+    email
+    fax
+    age
+    birthDay
+    familyStatus
+    children
+    height
+    weight
+    momOrg
+    dadOrg
     createdAt
     updatedAt
   }

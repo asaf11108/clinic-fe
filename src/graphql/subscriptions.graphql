@@ -4,6 +4,19 @@ subscription OnCreatePatient {
     id
     firstName
     lastName
+    phone
+    cellphone
+    address
+    email
+    fax
+    age
+    birthDay
+    familyStatus
+    children
+    height
+    weight
+    momOrg
+    dadOrg
     createdAt
     updatedAt
   }
@@ -13,6 +26,19 @@ subscription OnUpdatePatient {
     id
     firstName
     lastName
+    phone
+    cellphone
+    address
+    email
+    fax
+    age
+    birthDay
+    familyStatus
+    children
+    height
+    weight
+    momOrg
+    dadOrg
     createdAt
     updatedAt
   }
@@ -22,6 +48,19 @@ subscription OnDeletePatient {
     id
     firstName
     lastName
+    phone
+    cellphone
+    address
+    email
+    fax
+    age
+    birthDay
+    familyStatus
+    children
+    height
+    weight
+    momOrg
+    dadOrg
     createdAt
     updatedAt
   }

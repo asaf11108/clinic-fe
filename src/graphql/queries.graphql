@@ -4,6 +4,19 @@ query GetPatient($id: ID!) {
     id
     firstName
     lastName
+    phone
+    cellphone
+    address
+    email
+    fax
+    age
+    birthDay
+    familyStatus
+    children
+    height
+    weight
+    momOrg
+    dadOrg
     createdAt
     updatedAt
   }
@@ -18,6 +31,19 @@ query ListPatients(
       id
       firstName
       lastName
+      phone
+      cellphone
+      address
+      email
+      fax
+      age
+      birthDay
+      familyStatus
+      children
+      height
+      weight
+      momOrg
+      dadOrg
       createdAt
       updatedAt
     }

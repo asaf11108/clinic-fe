@@ -13,11 +13,37 @@ export type CreatePatientInput = {
   id?: string | null;
   firstName?: string | null;
   lastName?: string | null;
+  phone?: string | null;
+  cellphone?: string | null;
+  address?: string | null;
+  email?: string | null;
+  fax?: string | null;
+  age?: string | null;
+  birthDay?: string | null;
+  familyStatus?: string | null;
+  children?: string | null;
+  height?: string | null;
+  weight?: string | null;
+  momOrg?: string | null;
+  dadOrg?: string | null;
 };
 
 export type ModelPatientConditionInput = {
   firstName?: ModelStringInput | null;
   lastName?: ModelStringInput | null;
+  phone?: ModelStringInput | null;
+  cellphone?: ModelStringInput | null;
+  address?: ModelStringInput | null;
+  email?: ModelStringInput | null;
+  fax?: ModelStringInput | null;
+  age?: ModelStringInput | null;
+  birthDay?: ModelStringInput | null;
+  familyStatus?: ModelStringInput | null;
+  children?: ModelStringInput | null;
+  height?: ModelStringInput | null;
+  weight?: ModelStringInput | null;
+  momOrg?: ModelStringInput | null;
+  dadOrg?: ModelStringInput | null;
   and?: Array<ModelPatientConditionInput | null> | null;
   or?: Array<ModelPatientConditionInput | null> | null;
   not?: ModelPatientConditionInput | null;
@@ -66,6 +92,19 @@ export type UpdatePatientInput = {
   id: string;
   firstName?: string | null;
   lastName?: string | null;
+  phone?: string | null;
+  cellphone?: string | null;
+  address?: string | null;
+  email?: string | null;
+  fax?: string | null;
+  age?: string | null;
+  birthDay?: string | null;
+  familyStatus?: string | null;
+  children?: string | null;
+  height?: string | null;
+  weight?: string | null;
+  momOrg?: string | null;
+  dadOrg?: string | null;
 };
 
 export type DeletePatientInput = {
@@ -76,6 +115,19 @@ export type ModelPatientFilterInput = {
   id?: ModelIDInput | null;
   firstName?: ModelStringInput | null;
   lastName?: ModelStringInput | null;
+  phone?: ModelStringInput | null;
+  cellphone?: ModelStringInput | null;
+  address?: ModelStringInput | null;
+  email?: ModelStringInput | null;
+  fax?: ModelStringInput | null;
+  age?: ModelStringInput | null;
+  birthDay?: ModelStringInput | null;
+  familyStatus?: ModelStringInput | null;
+  children?: ModelStringInput | null;
+  height?: ModelStringInput | null;
+  weight?: ModelStringInput | null;
+  momOrg?: ModelStringInput | null;
+  dadOrg?: ModelStringInput | null;
   and?: Array<ModelPatientFilterInput | null> | null;
   or?: Array<ModelPatientFilterInput | null> | null;
   not?: ModelPatientFilterInput | null;
@@ -102,6 +154,19 @@ export type CreatePatientMutation = {
   id: string;
   firstName: string | null;
   lastName: string | null;
+  phone: string | null;
+  cellphone: string | null;
+  address: string | null;
+  email: string | null;
+  fax: string | null;
+  age: string | null;
+  birthDay: string | null;
+  familyStatus: string | null;
+  children: string | null;
+  height: string | null;
+  weight: string | null;
+  momOrg: string | null;
+  dadOrg: string | null;
   createdAt: string;
   updatedAt: string;
 };
@@ -111,6 +176,19 @@ export type UpdatePatientMutation = {
   id: string;
   firstName: string | null;
   lastName: string | null;
+  phone: string | null;
+  cellphone: string | null;
+  address: string | null;
+  email: string | null;
+  fax: string | null;
+  age: string | null;
+  birthDay: string | null;
+  familyStatus: string | null;
+  children: string | null;
+  height: string | null;
+  weight: string | null;
+  momOrg: string | null;
+  dadOrg: string | null;
   createdAt: string;
   updatedAt: string;
 };
@@ -120,6 +198,19 @@ export type DeletePatientMutation = {
   id: string;
   firstName: string | null;
   lastName: string | null;
+  phone: string | null;
+  cellphone: string | null;
+  address: string | null;
+  email: string | null;
+  fax: string | null;
+  age: string | null;
+  birthDay: string | null;
+  familyStatus: string | null;
+  children: string | null;
+  height: string | null;
+  weight: string | null;
+  momOrg: string | null;
+  dadOrg: string | null;
   createdAt: string;
   updatedAt: string;
 };
@@ -129,6 +220,19 @@ export type GetPatientQuery = {
   id: string;
   firstName: string | null;
   lastName: string | null;
+  phone: string | null;
+  cellphone: string | null;
+  address: string | null;
+  email: string | null;
+  fax: string | null;
+  age: string | null;
+  birthDay: string | null;
+  familyStatus: string | null;
+  children: string | null;
+  height: string | null;
+  weight: string | null;
+  momOrg: string | null;
+  dadOrg: string | null;
   createdAt: string;
   updatedAt: string;
 };
@@ -140,6 +244,19 @@ export type ListPatientsQuery = {
     id: string;
     firstName: string | null;
     lastName: string | null;
+    phone: string | null;
+    cellphone: string | null;
+    address: string | null;
+    email: string | null;
+    fax: string | null;
+    age: string | null;
+    birthDay: string | null;
+    familyStatus: string | null;
+    children: string | null;
+    height: string | null;
+    weight: string | null;
+    momOrg: string | null;
+    dadOrg: string | null;
     createdAt: string;
     updatedAt: string;
   } | null> | null;
@@ -151,6 +268,19 @@ export type OnCreatePatientSubscription = {
   id: string;
   firstName: string | null;
   lastName: string | null;
+  phone: string | null;
+  cellphone: string | null;
+  address: string | null;
+  email: string | null;
+  fax: string | null;
+  age: string | null;
+  birthDay: string | null;
+  familyStatus: string | null;
+  children: string | null;
+  height: string | null;
+  weight: string | null;
+  momOrg: string | null;
+  dadOrg: string | null;
   createdAt: string;
   updatedAt: string;
 };
@@ -160,6 +290,19 @@ export type OnUpdatePatientSubscription = {
   id: string;
   firstName: string | null;
   lastName: string | null;
+  phone: string | null;
+  cellphone: string | null;
+  address: string | null;
+  email: string | null;
+  fax: string | null;
+  age: string | null;
+  birthDay: string | null;
+  familyStatus: string | null;
+  children: string | null;
+  height: string | null;
+  weight: string | null;
+  momOrg: string | null;
+  dadOrg: string | null;
   createdAt: string;
   updatedAt: string;
 };
@@ -169,6 +312,19 @@ export type OnDeletePatientSubscription = {
   id: string;
   firstName: string | null;
   lastName: string | null;
+  phone: string | null;
+  cellphone: string | null;
+  address: string | null;
+  email: string | null;
+  fax: string | null;
+  age: string | null;
+  birthDay: string | null;
+  familyStatus: string | null;
+  children: string | null;
+  height: string | null;
+  weight: string | null;
+  momOrg: string | null;
+  dadOrg: string | null;
   createdAt: string;
   updatedAt: string;
 };
@@ -187,6 +343,19 @@ export class APIService {
           id
           firstName
           lastName
+          phone
+          cellphone
+          address
+          email
+          fax
+          age
+          birthDay
+          familyStatus
+          children
+          height
+          weight
+          momOrg
+          dadOrg
           createdAt
           updatedAt
         }
@@ -212,6 +381,19 @@ export class APIService {
           id
           firstName
           lastName
+          phone
+          cellphone
+          address
+          email
+          fax
+          age
+          birthDay
+          familyStatus
+          children
+          height
+          weight
+          momOrg
+          dadOrg
           createdAt
           updatedAt
         }
@@ -237,6 +419,19 @@ export class APIService {
           id
           firstName
           lastName
+          phone
+          cellphone
+          address
+          email
+          fax
+          age
+          birthDay
+          familyStatus
+          children
+          height
+          weight
+          momOrg
+          dadOrg
           createdAt
           updatedAt
         }
@@ -259,6 +454,19 @@ export class APIService {
           id
           firstName
           lastName
+          phone
+          cellphone
+          address
+          email
+          fax
+          age
+          birthDay
+          familyStatus
+          children
+          height
+          weight
+          momOrg
+          dadOrg
           createdAt
           updatedAt
         }
@@ -284,6 +492,19 @@ export class APIService {
             id
             firstName
             lastName
+            phone
+            cellphone
+            address
+            email
+            fax
+            age
+            birthDay
+            familyStatus
+            children
+            height
+            weight
+            momOrg
+            dadOrg
             createdAt
             updatedAt
           }
@@ -315,6 +536,19 @@ export class APIService {
           id
           firstName
           lastName
+          phone
+          cellphone
+          address
+          email
+          fax
+          age
+          birthDay
+          familyStatus
+          children
+          height
+          weight
+          momOrg
+          dadOrg
           createdAt
           updatedAt
         }
@@ -332,6 +566,19 @@ export class APIService {
           id
           firstName
           lastName
+          phone
+          cellphone
+          address
+          email
+          fax
+          age
+          birthDay
+          familyStatus
+          children
+          height
+          weight
+          momOrg
+          dadOrg
           createdAt
           updatedAt
         }
@@ -349,6 +596,19 @@ export class APIService {
           id
           firstName
           lastName
+          phone
+          cellphone
+          address
+          email
+          fax
+          age
+          birthDay
+          familyStatus
+          children
+          height
+          weight
+          momOrg
+          dadOrg
           createdAt
           updatedAt
         }
