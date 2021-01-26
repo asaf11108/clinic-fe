@@ -20,7 +20,7 @@ import { LoginEffects } from './components/login/login.effects';
 import { AmplifyAuthService } from './services/amplify-auth.service';
 import { ReactiveComponentModule } from '@ngrx/component';
 import { SearchComponent } from './components/search/search.component';
-import { SearchTableComponent } from './search-table/search-table.component';
+import { SearchTableComponent } from './components/search-table/search-table.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
