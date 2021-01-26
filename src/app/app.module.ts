@@ -20,6 +20,10 @@ import { LoginEffects } from './components/login/login.effects';
 import { AmplifyAuthService } from './services/amplify-auth.service';
 import { ReactiveComponentModule } from '@ngrx/component';
 import { SearchComponent } from './components/search/search.component';
+import { SearchTableComponent } from './search-table/search-table.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 const rootReducers = {
   login: fromLogin.reducer
@@ -37,7 +41,8 @@ const rootEffects = [
     PageNotFoundComponent,
     UnauthorizedPageComponent,
     MatButtonLoadingDirective,
-    SearchComponent
+    SearchComponent,
+    SearchTableComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +53,10 @@ const rootEffects = [
     StoreModule.forRoot(rootReducers, {}),
     EffectsModule.forRoot(rootEffects),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
-    ReactiveComponentModule
+    ReactiveComponentModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]
