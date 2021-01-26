@@ -1,5 +1,5 @@
-type Todo @model {
+type Patient @model {
   id: ID!
-  name: String!
-  description: String
+  firstName: String
+  lastName: String
 }

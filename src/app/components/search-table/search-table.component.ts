@@ -1,3 +1,4 @@
+import { Patient } from './../../model/patient';
 import { APIService } from './../../API.service';
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
@@ -5,16 +6,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { from } from 'rxjs';
 import { take } from 'rxjs/operators';
-
-interface ToDo {
-  id: string;
-  name: string;
-}
-
-interface ToDoFilter {
-  value: string;
-  viewValue: string;
-}
+import { displayedColumnsTranslate } from './column.translate';
 
 @Component({
   selector: 'app-search-table',
@@ -24,21 +16,17 @@ interface ToDoFilter {
 export class SearchTableComponent implements AfterViewInit, OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-  @ViewChild(MatTable) table: MatTable<ToDo>;
-  dataSource = new MatTableDataSource<ToDo>();
+  @ViewChild(MatTable) table: MatTable<Patient>;
+  dataSource = new MatTableDataSource<Patient>();
   isLoadingResults = true;
 
   constructor(private apiService: APIService) { }
 
-  filters: ToDoFilter[] = [
-    {value: 'id', viewValue: 'Id'},
-    {value: 'name', viewValue: 'Name'}
-  ];
-  displayedColumns = ['id', 'name'];
-  selectedFilter = this.filters[0].value;
+  columns = ['id', 'firstName', 'lastName'];
+  displayedColumns = displayedColumnsTranslate;
 
   ngOnInit() {
-    from(this.apiService.ListTodos()).pipe(
+    from(this.apiService.ListPatients()).pipe(
       take(1)
     ).subscribe(res => {
       this.dataSource.data = res?.items || [];

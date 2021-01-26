@@ -9,18 +9,18 @@ export interface SubscriptionResponse<T> {
   value: GraphQLResult<T>;
 }
 
-export type CreateTodoInput = {
+export type CreatePatientInput = {
   id?: string | null;
-  name: string;
-  description?: string | null;
+  firstName: string;
+  lastName?: string | null;
 };
 
-export type ModelTodoConditionInput = {
-  name?: ModelStringInput | null;
-  description?: ModelStringInput | null;
-  and?: Array<ModelTodoConditionInput | null> | null;
-  or?: Array<ModelTodoConditionInput | null> | null;
-  not?: ModelTodoConditionInput | null;
+export type ModelPatientConditionInput = {
+  firstName?: ModelStringInput | null;
+  lastName?: ModelStringInput | null;
+  and?: Array<ModelPatientConditionInput | null> | null;
+  or?: Array<ModelPatientConditionInput | null> | null;
+  not?: ModelPatientConditionInput | null;
 };
 
 export type ModelStringInput = {
@@ -62,23 +62,23 @@ export type ModelSizeInput = {
   between?: Array<number | null> | null;
 };
 
-export type UpdateTodoInput = {
+export type UpdatePatientInput = {
   id: string;
-  name?: string | null;
-  description?: string | null;
+  firstName?: string | null;
+  lastName?: string | null;
 };
 
-export type DeleteTodoInput = {
+export type DeletePatientInput = {
   id?: string | null;
 };
 
-export type ModelTodoFilterInput = {
+export type ModelPatientFilterInput = {
   id?: ModelIDInput | null;
-  name?: ModelStringInput | null;
-  description?: ModelStringInput | null;
-  and?: Array<ModelTodoFilterInput | null> | null;
-  or?: Array<ModelTodoFilterInput | null> | null;
-  not?: ModelTodoFilterInput | null;
+  firstName?: ModelStringInput | null;
+  lastName?: ModelStringInput | null;
+  and?: Array<ModelPatientFilterInput | null> | null;
+  or?: Array<ModelPatientFilterInput | null> | null;
+  not?: ModelPatientFilterInput | null;
 };
 
 export type ModelIDInput = {
@@ -97,78 +97,78 @@ export type ModelIDInput = {
   size?: ModelSizeInput | null;
 };
 
-export type CreateTodoMutation = {
-  __typename: "Todo";
+export type CreatePatientMutation = {
+  __typename: "Patient";
   id: string;
-  name: string;
-  description: string | null;
+  firstName: string;
+  lastName: string | null;
   createdAt: string;
   updatedAt: string;
 };
 
-export type UpdateTodoMutation = {
-  __typename: "Todo";
+export type UpdatePatientMutation = {
+  __typename: "Patient";
   id: string;
-  name: string;
-  description: string | null;
+  firstName: string;
+  lastName: string | null;
   createdAt: string;
   updatedAt: string;
 };
 
-export type DeleteTodoMutation = {
-  __typename: "Todo";
+export type DeletePatientMutation = {
+  __typename: "Patient";
   id: string;
-  name: string;
-  description: string | null;
+  firstName: string;
+  lastName: string | null;
   createdAt: string;
   updatedAt: string;
 };
 
-export type GetTodoQuery = {
-  __typename: "Todo";
+export type GetPatientQuery = {
+  __typename: "Patient";
   id: string;
-  name: string;
-  description: string | null;
+  firstName: string;
+  lastName: string | null;
   createdAt: string;
   updatedAt: string;
 };
 
-export type ListTodosQuery = {
-  __typename: "ModelTodoConnection";
+export type ListPatientsQuery = {
+  __typename: "ModelPatientConnection";
   items: Array<{
-    __typename: "Todo";
+    __typename: "Patient";
     id: string;
-    name: string;
-    description: string | null;
+    firstName: string;
+    lastName: string | null;
     createdAt: string;
     updatedAt: string;
   } | null> | null;
   nextToken: string | null;
 };
 
-export type OnCreateTodoSubscription = {
-  __typename: "Todo";
+export type OnCreatePatientSubscription = {
+  __typename: "Patient";
   id: string;
-  name: string;
-  description: string | null;
+  firstName: string;
+  lastName: string | null;
   createdAt: string;
   updatedAt: string;
 };
 
-export type OnUpdateTodoSubscription = {
-  __typename: "Todo";
+export type OnUpdatePatientSubscription = {
+  __typename: "Patient";
   id: string;
-  name: string;
-  description: string | null;
+  firstName: string;
+  lastName: string | null;
   createdAt: string;
   updatedAt: string;
 };
 
-export type OnDeleteTodoSubscription = {
-  __typename: "Todo";
+export type OnDeletePatientSubscription = {
+  __typename: "Patient";
   id: string;
-  name: string;
-  description: string | null;
+  firstName: string;
+  lastName: string | null;
   createdAt: string;
   updatedAt: string;
 };
@@ -177,16 +177,16 @@ export type OnDeleteTodoSubscription = {
   providedIn: "root"
 })
 export class APIService {
-  async CreateTodo(
-    input: CreateTodoInput,
-    condition?: ModelTodoConditionInput
-  ): Promise<CreateTodoMutation> {
-    const statement = `mutation CreateTodo($input: CreateTodoInput!, $condition: ModelTodoConditionInput) {
-        createTodo(input: $input, condition: $condition) {
+  async CreatePatient(
+    input: CreatePatientInput,
+    condition?: ModelPatientConditionInput
+  ): Promise<CreatePatientMutation> {
+    const statement = `mutation CreatePatient($input: CreatePatientInput!, $condition: ModelPatientConditionInput) {
+        createPatient(input: $input, condition: $condition) {
           __typename
           id
-          name
-          description
+          firstName
+          lastName
           createdAt
           updatedAt
         }
@@ -200,18 +200,18 @@ export class APIService {
     const response = (await API.graphql(
       graphqlOperation(statement, gqlAPIServiceArguments)
     )) as any;
-    return <CreateTodoMutation>response.data.createTodo;
+    return <CreatePatientMutation>response.data.createPatient;
   }
-  async UpdateTodo(
-    input: UpdateTodoInput,
-    condition?: ModelTodoConditionInput
-  ): Promise<UpdateTodoMutation> {
-    const statement = `mutation UpdateTodo($input: UpdateTodoInput!, $condition: ModelTodoConditionInput) {
-        updateTodo(input: $input, condition: $condition) {
+  async UpdatePatient(
+    input: UpdatePatientInput,
+    condition?: ModelPatientConditionInput
+  ): Promise<UpdatePatientMutation> {
+    const statement = `mutation UpdatePatient($input: UpdatePatientInput!, $condition: ModelPatientConditionInput) {
+        updatePatient(input: $input, condition: $condition) {
           __typename
           id
-          name
-          description
+          firstName
+          lastName
           createdAt
           updatedAt
         }
@@ -225,18 +225,18 @@ export class APIService {
     const response = (await API.graphql(
       graphqlOperation(statement, gqlAPIServiceArguments)
     )) as any;
-    return <UpdateTodoMutation>response.data.updateTodo;
+    return <UpdatePatientMutation>response.data.updatePatient;
   }
-  async DeleteTodo(
-    input: DeleteTodoInput,
-    condition?: ModelTodoConditionInput
-  ): Promise<DeleteTodoMutation> {
-    const statement = `mutation DeleteTodo($input: DeleteTodoInput!, $condition: ModelTodoConditionInput) {
-        deleteTodo(input: $input, condition: $condition) {
+  async DeletePatient(
+    input: DeletePatientInput,
+    condition?: ModelPatientConditionInput
+  ): Promise<DeletePatientMutation> {
+    const statement = `mutation DeletePatient($input: DeletePatientInput!, $condition: ModelPatientConditionInput) {
+        deletePatient(input: $input, condition: $condition) {
           __typename
           id
-          name
-          description
+          firstName
+          lastName
           createdAt
           updatedAt
         }
@@ -250,15 +250,15 @@ export class APIService {
     const response = (await API.graphql(
       graphqlOperation(statement, gqlAPIServiceArguments)
     )) as any;
-    return <DeleteTodoMutation>response.data.deleteTodo;
+    return <DeletePatientMutation>response.data.deletePatient;
   }
-  async GetTodo(id: string): Promise<GetTodoQuery> {
-    const statement = `query GetTodo($id: ID!) {
-        getTodo(id: $id) {
+  async GetPatient(id: string): Promise<GetPatientQuery> {
+    const statement = `query GetPatient($id: ID!) {
+        getPatient(id: $id) {
           __typename
           id
-          name
-          description
+          firstName
+          lastName
           createdAt
           updatedAt
         }
@@ -269,21 +269,21 @@ export class APIService {
     const response = (await API.graphql(
       graphqlOperation(statement, gqlAPIServiceArguments)
     )) as any;
-    return <GetTodoQuery>response.data.getTodo;
+    return <GetPatientQuery>response.data.getPatient;
   }
-  async ListTodos(
-    filter?: ModelTodoFilterInput,
+  async ListPatients(
+    filter?: ModelPatientFilterInput,
     limit?: number,
     nextToken?: string
-  ): Promise<ListTodosQuery> {
-    const statement = `query ListTodos($filter: ModelTodoFilterInput, $limit: Int, $nextToken: String) {
-        listTodos(filter: $filter, limit: $limit, nextToken: $nextToken) {
+  ): Promise<ListPatientsQuery> {
+    const statement = `query ListPatients($filter: ModelPatientFilterInput, $limit: Int, $nextToken: String) {
+        listPatients(filter: $filter, limit: $limit, nextToken: $nextToken) {
           __typename
           items {
             __typename
             id
-            name
-            description
+            firstName
+            lastName
             createdAt
             updatedAt
           }
@@ -303,56 +303,56 @@ export class APIService {
     const response = (await API.graphql(
       graphqlOperation(statement, gqlAPIServiceArguments)
     )) as any;
-    return <ListTodosQuery>response.data.listTodos;
+    return <ListPatientsQuery>response.data.listPatients;
   }
-  OnCreateTodoListener: Observable<
-    SubscriptionResponse<OnCreateTodoSubscription>
+  OnCreatePatientListener: Observable<
+    SubscriptionResponse<OnCreatePatientSubscription>
   > = API.graphql(
     graphqlOperation(
-      `subscription OnCreateTodo {
-        onCreateTodo {
+      `subscription OnCreatePatient {
+        onCreatePatient {
           __typename
           id
-          name
-          description
+          firstName
+          lastName
           createdAt
           updatedAt
         }
       }`
     )
-  ) as Observable<SubscriptionResponse<OnCreateTodoSubscription>>;
+  ) as Observable<SubscriptionResponse<OnCreatePatientSubscription>>;
 
-  OnUpdateTodoListener: Observable<
-    SubscriptionResponse<OnUpdateTodoSubscription>
+  OnUpdatePatientListener: Observable<
+    SubscriptionResponse<OnUpdatePatientSubscription>
   > = API.graphql(
     graphqlOperation(
-      `subscription OnUpdateTodo {
-        onUpdateTodo {
+      `subscription OnUpdatePatient {
+        onUpdatePatient {
           __typename
           id
-          name
-          description
+          firstName
+          lastName
           createdAt
           updatedAt
         }
       }`
     )
-  ) as Observable<SubscriptionResponse<OnUpdateTodoSubscription>>;
+  ) as Observable<SubscriptionResponse<OnUpdatePatientSubscription>>;
 
-  OnDeleteTodoListener: Observable<
-    SubscriptionResponse<OnDeleteTodoSubscription>
+  OnDeletePatientListener: Observable<
+    SubscriptionResponse<OnDeletePatientSubscription>
   > = API.graphql(
     graphqlOperation(
-      `subscription OnDeleteTodo {
-        onDeleteTodo {
+      `subscription OnDeletePatient {
+        onDeletePatient {
           __typename
           id
-          name
-          description
+          firstName
+          lastName
           createdAt
           updatedAt
         }
       }`
     )
-  ) as Observable<SubscriptionResponse<OnDeleteTodoSubscription>>;
+  ) as Observable<SubscriptionResponse<OnDeletePatientSubscription>>;
 }
