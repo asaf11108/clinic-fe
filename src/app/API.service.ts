@@ -11,7 +11,7 @@ export interface SubscriptionResponse<T> {
 
 export type CreatePatientInput = {
   id?: string | null;
-  firstName: string;
+  firstName?: string | null;
   lastName?: string | null;
 };
 
@@ -100,7 +100,7 @@ export type ModelIDInput = {
 export type CreatePatientMutation = {
   __typename: "Patient";
   id: string;
-  firstName: string;
+  firstName: string | null;
   lastName: string | null;
   createdAt: string;
   updatedAt: string;
@@ -109,7 +109,7 @@ export type CreatePatientMutation = {
 export type UpdatePatientMutation = {
   __typename: "Patient";
   id: string;
-  firstName: string;
+  firstName: string | null;
   lastName: string | null;
   createdAt: string;
   updatedAt: string;
@@ -118,7 +118,7 @@ export type UpdatePatientMutation = {
 export type DeletePatientMutation = {
   __typename: "Patient";
   id: string;
-  firstName: string;
+  firstName: string | null;
   lastName: string | null;
   createdAt: string;
   updatedAt: string;
@@ -127,7 +127,7 @@ export type DeletePatientMutation = {
 export type GetPatientQuery = {
   __typename: "Patient";
   id: string;
-  firstName: string;
+  firstName: string | null;
   lastName: string | null;
   createdAt: string;
   updatedAt: string;
@@ -138,7 +138,7 @@ export type ListPatientsQuery = {
   items: Array<{
     __typename: "Patient";
     id: string;
-    firstName: string;
+    firstName: string | null;
     lastName: string | null;
     createdAt: string;
     updatedAt: string;
@@ -149,7 +149,7 @@ export type ListPatientsQuery = {
 export type OnCreatePatientSubscription = {
   __typename: "Patient";
   id: string;
-  firstName: string;
+  firstName: string | null;
   lastName: string | null;
   createdAt: string;
   updatedAt: string;
@@ -158,7 +158,7 @@ export type OnCreatePatientSubscription = {
 export type OnUpdatePatientSubscription = {
   __typename: "Patient";
   id: string;
-  firstName: string;
+  firstName: string | null;
   lastName: string | null;
   createdAt: string;
   updatedAt: string;
@@ -167,7 +167,7 @@ export type OnUpdatePatientSubscription = {
 export type OnDeletePatientSubscription = {
   __typename: "Patient";
   id: string;
-  firstName: string;
+  firstName: string | null;
   lastName: string | null;
   createdAt: string;
   updatedAt: string;

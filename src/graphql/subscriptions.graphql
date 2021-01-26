@@ -1,27 +1,27 @@
 # this is an auto generated file. This will be overwritten
-subscription OnCreateTodo {
-  onCreateTodo {
+subscription OnCreatePatient {
+  onCreatePatient {
     id
-    name
-    description
+    firstName
+    lastName
     createdAt
     updatedAt
   }
 }
-subscription OnUpdateTodo {
-  onUpdateTodo {
+subscription OnUpdatePatient {
+  onUpdatePatient {
     id
-    name
-    description
+    firstName
+    lastName
     createdAt
     updatedAt
   }
 }
-subscription OnDeleteTodo {
-  onDeleteTodo {
+subscription OnDeletePatient {
+  onDeletePatient {
     id
-    name
-    description
+    firstName
+    lastName
     createdAt
     updatedAt
   }
