@@ -19,6 +19,7 @@ import * as fromLogin from './components/login/login.reducer';
 import { LoginEffects } from './components/login/login.effects';
 import { AmplifyAuthService } from './services/amplify-auth.service';
 import { ReactiveComponentModule } from '@ngrx/component';
+import { SearchComponent } from './components/search/search.component';
 
 const rootReducers = {
   login: fromLogin.reducer
@@ -35,7 +36,8 @@ const rootEffects = [
     LoginComponent,
     PageNotFoundComponent,
     UnauthorizedPageComponent,
-    MatButtonLoadingDirective
+    MatButtonLoadingDirective,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

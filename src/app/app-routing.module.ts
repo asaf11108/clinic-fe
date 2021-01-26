@@ -3,10 +3,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { LandingComponent } from './components/landing/landing.component';
 import { LoginComponent } from './components/login/login.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { SearchComponent } from './components/search/search.component';
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent },
   { path: '', component: LandingComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'search', component: SearchComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 
