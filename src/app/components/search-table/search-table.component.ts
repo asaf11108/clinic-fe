@@ -7,7 +7,7 @@ import { from } from 'rxjs';
 import { take } from 'rxjs/operators';
 
 interface ToDo {
-  id: string | number;
+  id: string;
   name: string;
 }
 
@@ -15,7 +15,6 @@ interface ToDoFilter {
   value: string;
   viewValue: string;
 }
-
 
 @Component({
   selector: 'app-search-table',
