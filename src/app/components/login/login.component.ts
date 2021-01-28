@@ -1,11 +1,11 @@
 import { Router } from '@angular/router';
 import { Actions, ofType } from '@ngrx/effects';
-import { isLoging, loginHasError } from './login.selectors';
-import { Component, OnInit, ChangeDetectionStrategy, ViewEncapsulation, OnDestroy } from '@angular/core';
+import { isLoging, loginHasError } from './redux/login.selectors';
+import { Component, OnInit, ChangeDetectionStrategy, ViewEncapsulation, OnDestroy, DoCheck } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { login, loginSuccess } from './login.actions';
+import { login, loginSuccess } from './redux/login.actions';
 import { untilDestroyed } from 'ngx-take-until-destroy';
 
 @Component({
@@ -15,7 +15,7 @@ import { untilDestroyed } from 'ngx-take-until-destroy';
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None
 })
-export class LoginComponent implements OnInit, OnDestroy {
+export class LoginComponent implements OnInit, OnDestroy, DoCheck {
   complete$: Observable<any>;
   isLoging$: Observable<any>;
   hasError$: Observable<any>;
@@ -24,6 +24,9 @@ export class LoginComponent implements OnInit, OnDestroy {
     this.complete$ = this.actions$.pipe(ofType(loginSuccess));
     this.isLoging$ = this.store.select(isLoging);
     this.hasError$ = this.store.select(loginHasError);
+  }
+  ngDoCheck(): void {
+  console.log("🚀 ~ file: login.component.ts ~ line 29 ~ LoginComponent ~ ngDoCheck ~ ngDoCheck")
   }
   
   loginForm: FormGroup = new FormGroup({

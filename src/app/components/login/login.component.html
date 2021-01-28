@@ -17,10 +17,10 @@
                 </mat-form-field>
             </div>
             <div class="login__submit-wrapper">
-                <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid" [loading]="isLoging$ | ngrxPush">Login</button>
+                <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid" [loading]="isLoging$ | async">Login</button>
             </div>
             
-            <mat-error *ngIf="hasError$ | ngrxPush">Invalid username or password</mat-error>
+            <mat-error *ngIf="hasError$ | async">Invalid username or password</mat-error>
             <br/>
             <mat-error>Navigating don't work. Please navigate through the url.</mat-error>
         </form>

@@ -15,19 +15,23 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
-import * as fromLogin from './components/login/login.reducer';
-import { LoginEffects } from './components/login/login.effects';
+import * as fromLogin from './components/login/redux/login.reducer';
+import { LoginEffects } from './components/login/redux/login.effects';
 import { AmplifyAuthService } from './services/amplify-auth.service';
 import { ReactiveComponentModule } from '@ngrx/component';
 import { SearchComponent } from './components/search/search.component';
 import { SearchTableComponent } from './components/search-table/search-table.component';
+import * as fromSearch from './components/search/redux/search.reducer';
+import { SearchEffects } from './components/search/redux/search.effects';
 
 const rootReducers = {
-  login: fromLogin.reducer
+  login: fromLogin.reducer,
+  search: fromSearch.reducer
 };
 
 const rootEffects = [
-  LoginEffects
+  LoginEffects,
+  SearchEffects
 ];
 
 @NgModule({

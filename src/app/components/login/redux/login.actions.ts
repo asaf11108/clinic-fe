@@ -1,4 +1,4 @@
-import { LoginForm } from './../../model/login';
+import { LoginForm } from '../../../model/login';
 import { createAction, props } from '@ngrx/store';
 
 export const login = createAction(
