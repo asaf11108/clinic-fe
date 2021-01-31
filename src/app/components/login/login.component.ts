@@ -15,7 +15,7 @@ import { untilDestroyed } from 'ngx-take-until-destroy';
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None
 })
-export class LoginComponent implements OnInit, OnDestroy, DoCheck {
+export class LoginComponent implements OnInit, OnDestroy {
   complete$: Observable<any>;
   isLoging$: Observable<any>;
   hasError$: Observable<any>;
@@ -24,9 +24,6 @@ export class LoginComponent implements OnInit, OnDestroy, DoCheck {
     this.complete$ = this.actions$.pipe(ofType(loginSuccess));
     this.isLoging$ = this.store.select(isLoging);
     this.hasError$ = this.store.select(loginHasError);
-  }
-  ngDoCheck(): void {
-  console.log("🚀 ~ file: login.component.ts ~ line 29 ~ LoginComponent ~ ngDoCheck ~ ngDoCheck")
   }
   
   loginForm: FormGroup = new FormGroup({

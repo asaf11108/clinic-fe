@@ -5,6 +5,7 @@ import { from, of } from 'rxjs';
 
 import * as LoginActions from './login.actions';
 import { Auth } from 'aws-amplify';
+import { requestWithMinimumLoading } from '../../../utility/custom-rxjs';
 
 
 
@@ -15,7 +16,7 @@ export class LoginEffects {
     return this.actions$.pipe( 
       ofType(LoginActions.login),
       switchMap(action =>
-        from(Auth.signIn({ username: action.username, password: action.password})).pipe(
+        requestWithMinimumLoading(from(Auth.signIn({ username: action.username, password: action.password}))).pipe(
           map(data => LoginActions.loginSuccess({ data })),
           catchError(error => of(LoginActions.loginFailure({ error }))))
       )
