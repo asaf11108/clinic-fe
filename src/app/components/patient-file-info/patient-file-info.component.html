@@ -1,12 +1,14 @@
-<table>
-    <thead>
-        <tr>
-            <th *ngFor="let infoCol of patientInfoDisplayColumns">{{infoCol}}</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td *ngFor="let infoCol of patientInfoDisplayColumns">{{patient[infoCol]}}</td>
-        </tr>
-    </tbody>
-</table>
+<div class="patient-file-info">
+    <table>
+        <thead>
+            <tr>
+                <th *ngFor="let infoCol of patientInfoDisplayColumns">{{infoCol}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td *ngFor="let infoCol of patientInfoDisplayColumns">{{patient[infoCol]}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
