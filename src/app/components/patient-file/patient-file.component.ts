@@ -1,3 +1,4 @@
+import { Patient } from './../../model/patient';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
@@ -7,6 +8,13 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PatientFileComponent implements OnInit {
+
+  patient: Patient = {
+    id: '9699589589',
+    firstName: 'Asaf',
+    lastName: 'Regev',
+    creationDate: '03/06/2000'
+  };
 
   constructor() { }
 
