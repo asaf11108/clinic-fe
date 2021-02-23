@@ -1,3 +1,4 @@
+import { PatientFileComponent } from './components/patient-file/patient-file.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LandingComponent } from './components/landing/landing.component';
@@ -9,6 +10,7 @@ const routes: Routes = [
   { path: '', component: LandingComponent },
   { path: 'login', component: LoginComponent },
   { path: 'search', component: SearchComponent },
+  { path: 'patient-file', component: PatientFileComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 

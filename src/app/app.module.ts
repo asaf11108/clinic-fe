@@ -1,3 +1,4 @@
+import { PatientFileComponent } from './components/patient-file/patient-file.component';
 import { MatButtonLoadingDirective } from './../directives/mat-button-loading.directive';
 import { MatetialModule } from './material.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -43,7 +44,8 @@ const rootEffects = [
     UnauthorizedPageComponent,
     MatButtonLoadingDirective,
     SearchComponent,
-    SearchTableComponent
+    SearchTableComponent,
+    PatientFileComponent
   ],
   imports: [
     BrowserModule,

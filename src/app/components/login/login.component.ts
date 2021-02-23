@@ -36,6 +36,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
   
   submit() {
+    // username: asaf11108, password: 62626262
     this.store.dispatch(login(this.loginForm.value));
   }
   
