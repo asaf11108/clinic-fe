@@ -16,12 +16,20 @@ export class PatientFileMeetingsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.dataSource.data = [{
-      date: '03/08/20',
-      description: 'aaaaaad dawdawddd wdawda',
-      weight: 77,
-      BMI: 3
-    }];
+    this.dataSource.data = [
+      {
+        date: '03/08/20',
+        description: 'aaaaaad dawdawddd wdawda',
+        weight: 77,
+        BMI: 3
+      },
+      {
+        date: '05/08/20',
+        description: 'df dawdawddd wdawda',
+        weight: 88,
+        BMI: 5
+      }
+  ];
   }
 
 }
