@@ -10,3 +10,20 @@
         <tr mat-row *matRowDef="let row; columns: columns;"></tr>
     </table>
 </div>
+<div class="patient-file-meetings__actions">
+    <button mat-raised-button color="primary">Add meeting</button>
+    <button mat-raised-button color="primary">Remove meeting</button>
+    <fieldset>
+        <legend align="center">Track weight</legend>
+        <div class="patient-file-meetings__track-weight">
+            <div>
+                <div>Last change</div>
+                <input matInput type="text" disabled [value]="0.1">
+            </div>
+            <div>
+                <div>Total changes</div>
+                <input matInput type="text" disabled [value]="10">
+            </div>
+        </div>
+    </fieldset>
+</div>
