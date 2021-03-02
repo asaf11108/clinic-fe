@@ -1,3 +1,13 @@
-.patient-file__content
-    display: grid
-    grid-auto-flow: row
+.patient-file
+    &__content
+        display: grid
+        grid-auto-flow: row
+        gap: 5%
+        &:last-child
+            margin-bottom: 3em !important
+        hr
+            margin: 0
+            border: 0
+            background-image: repeating-linear-gradient(to right, #555 0%, #555 50%, transparent 50%, transparent 100%)
+            height: 1px
+            background-size: 60px 100%

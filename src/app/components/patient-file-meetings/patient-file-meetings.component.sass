@@ -1,3 +1,5 @@
+@use 'vendors'
+
 .patient-file-meetings
     width: 700px
 
@@ -5,21 +7,25 @@
         display: flex
         justify-content: space-between
         flex-wrap: wrap
+        margin: 0 5%
+        @include vendors.media('<=md')
+            margin: 0
         & > div
             display: flex
             align-items: center
             gap: 30px
 
     &__track-weight
+        display: flex
+        gap: 5px
         & > div
-            display: inline-block
             text-align: center
             margin: 5px
         & input
             width: 40px
             margin-top: 5px
 
-    @media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px)
+    @include vendors.media('<=md')
         width: 90vw
         /* Force table to not be like tables anymore */
         table, thead, tbody, th, td, tr
