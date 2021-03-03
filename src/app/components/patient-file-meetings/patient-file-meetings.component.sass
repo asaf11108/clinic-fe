@@ -5,15 +5,15 @@
 
     &__actions
         display: flex
-        justify-content: space-between
+        justify-content: space-around
         flex-wrap: wrap
-        margin: 0 5%
         @include vendors.media('<=md')
             margin: 0
         & > div
             display: flex
             align-items: center
             gap: 30px
+            margin-inline-end: 10%
         legend
             text-align: center
 
@@ -25,7 +25,7 @@
             margin: 5px
         & input
             width: 40px
-            margin-top: 5px
+            margin-block-start: 5px
 
     @include vendors.media('<=md')
         width: 90vw
@@ -48,9 +48,9 @@
         td
             /* Behave  like a "row" */
             border: none
-            border-bottom: 1px solid #eee
+            border-block-end: 1px solid #eee
             position: relative
-            padding-left: 50% !important
+            padding-inline-start: 50% !important
         
         
         td:before
@@ -61,6 +61,6 @@
             top: 50%
             left: 6px
             width: 45%
-            padding-right: 10px
+            padding-block-start: 10px
             white-space: nowrap
             transform: translateY(-50%)

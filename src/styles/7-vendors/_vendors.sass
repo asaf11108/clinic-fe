@@ -1,3 +1,2 @@
-
-@forward '~include-media/dist/include-media' with ($breakpoints: ('xs': 320px, 'sm': 480px, 'md': 768px, 'lg': 1024px) !default)
-
+$custom-breakpoints: ('xs': 320px, 'sm': 480px, 'md': 768px, 'lg': 1024px) !default
+@forward '~include-media/dist/include-media' with ($breakpoints: $custom-breakpoints)
