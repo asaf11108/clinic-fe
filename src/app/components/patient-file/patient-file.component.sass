@@ -1,12 +1,11 @@
 @use 'vendors'
-@use 'include-media-spread'
     
 .patient-file
     &__content
         display: grid
         grid-auto-flow: row
         overflow: auto
-        @include include-media-spread.spread(gap, 20px, 40px)
+        @include vendors.spread(gap, 20px, 40px)
         hr
             margin: 0
             border: 0
