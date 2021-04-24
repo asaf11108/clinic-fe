@@ -1,9 +1,12 @@
 @use 'vendors'
     
 .patient-file
+    @include vendors.spread(width, 90vw, 50vw)
+
     &__content
         display: grid
         grid-auto-flow: row
+        justify-content: unset
         overflow: auto
         @include vendors.spread(gap, 20px, 40px)
         hr
@@ -16,7 +19,7 @@
         display: grid
         grid-auto-flow: column
         justify-items: center
-        @include vendors.media('<=md')
+        @include vendors.media('<=xs')
             grid-auto-flow: row
         & > div
             display: flex
