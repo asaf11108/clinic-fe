@@ -3,7 +3,11 @@
 //  This file was automatically generated and should not be edited.
 import { Injectable } from "@angular/core";
 import API, { graphqlOperation, GraphQLResult } from "@aws-amplify/api-graphql";
+import { Auth } from "aws-amplify";
+import { AWSAppSyncClient } from "aws-appsync";
+import awsconfig from "src/aws-exports";
 import { Observable } from "zen-observable-ts";
+import { gqlObjTransformer, renameObjKey } from "./utility/helpers";
 
 export interface SubscriptionResponse<T> {
   value: GraphQLResult<T>;
@@ -768,6 +772,15 @@ export type OnDeleteMeetingSubscription = {
   providedIn: "root"
 })
 export class APIService {
+  readonly client = new AWSAppSyncClient({
+    url: awsconfig.aws_appsync_graphqlEndpoint,
+    region: awsconfig.aws_appsync_region,
+    auth: {
+      type: awsconfig.aws_appsync_authenticationType as any,
+      jwtToken: async () => (await Auth.currentSession()).getIdToken().getJwtToken(),
+    },
+    disableOffline: true
+  })
   async CreatePatient(
     input: CreatePatientInput,
     condition?: ModelPatientConditionInput
@@ -814,8 +827,8 @@ export class APIService {
     if (condition) {
       gqlAPIServiceArguments.condition = condition;
     }
-    const response = (await API.graphql(
-      graphqlOperation(statement, gqlAPIServiceArguments)
+    const response = (await this.client.mutate(
+      renameObjKey(gqlObjTransformer(graphqlOperation(statement, gqlAPIServiceArguments)), 'mutation', 'query')
     )) as any;
     return <CreatePatientMutation>response.data.createPatient;
   }
@@ -1164,8 +1177,8 @@ export class APIService {
     if (nextToken) {
       gqlAPIServiceArguments.nextToken = nextToken;
     }
-    const response = (await API.graphql(
-      graphqlOperation(statement, gqlAPIServiceArguments)
+    const response = (await this.client.query(
+      gqlObjTransformer(graphqlOperation(statement, gqlAPIServiceArguments))
     )) as any;
     return <ListPatientsQuery>response.data.listPatients;
   }

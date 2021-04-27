@@ -26,12 +26,8 @@ export class SearchTableComponent implements AfterViewInit, OnInit {
   displayedColumns = displayedColumnsTranslate;
 
   ngOnInit() {
-    from(this.apiService.ListPatients()).pipe(
-      take(1)
-    ).subscribe(res => {
-      this.dataSource.data = res?.items || [];
-      this.isLoadingResults = false;
-    })
+    this.apiService.ListPatients();
+    this.isLoadingResults = false;
   }
 
   ngAfterViewInit() {
